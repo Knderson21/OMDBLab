@@ -1,0 +1,29 @@
+﻿@model MovieModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<form method="post" asp-action="MovieSearch">
+    Search for movie <input type="text" name="title" />
+    <input type="submit" />
+</form>
+@{
+    if(Model != null)
+    {
+        <div class="card col-4">
+            <img class="card-img-top" src="@Model.Poster" /> 
+            <div class="card-body">
+                <h1>@Model.Title</h1>
+                <p>@Model.Plot</p>
+                <p>Year released: @Model.Year</p>
+                <p>Runtime: @Model.Runtime</p>
+                <p>Director: @Model.Director</p>
+            </div>
+        </div>
+        
+        
+    }
+}
+
